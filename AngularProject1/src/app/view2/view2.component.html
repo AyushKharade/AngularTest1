@@ -4,9 +4,18 @@
     <h2>View2</h2>
 
     Slider
-    <mat-slider min="1" max="100" step="1" value="{{value}}" thumbLabel tickInterval="1" (input)="Update($event)"> </mat-slider>
+    <mat-slider min="1" max="100" step="1" value="{{value}}" thumbLabel tickInterval="1" (input)="Update($event)"> </mat-slider> {{value}}
     <br>
     Input Value:   
-    <input matInput placeholder="Enter a value between 0-100">
+    <!-- <input matInput placeholder="Enter a value between 0-100"> -->
+    <input id="view2Input" placeholder="Enter value (0-100)" min="0" max="100" type="number" style="background-color: #4CAF50;" >
+    
 
+     <button type="button" (click)="UpdateVal()" > Submit </button> 
+
+     <!--
+    <form (ngSubmit="OnSubmit($event)">
+        <input name="valueID" value="0">
+    </form>)
+-->
 </div>

@@ -38,4 +38,25 @@ export class View2Component implements OnInit {
   }
 }
 
+UpdateVal()
+{
+  
+  var valueStr=(<HTMLInputElement> document.getElementById("view2Input")).value;
+  var valueNum = parseInt(valueStr);
+
+  this._sliderValueService.UpdateSlider(valueNum).subscribe(response =>{});
+
+  // for instant update of slider value.
+  this.sliderValue=this._sliderValueService.GetAll();
+     this.sliderValue.subscribe(
+       data => {this.value = data[0].value} , 
+       err => console.error(err)
+       
+       
+     )
+  
+  
+}
+
+
 }
