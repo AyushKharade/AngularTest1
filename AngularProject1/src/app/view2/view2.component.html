@@ -1,21 +1,26 @@
-<p>view2 works!</p>
 
-<div class="myDiv">
-    <h2>View2</h2>
+<br><br>
+<h2>You are currently on View2 Component.</h2>
+
+<div>
+    <h2 class="ViewHeader2">View2</h2>
 
     Slider
-    <mat-slider min="1" max="100" step="1" value="{{value}}" thumbLabel tickInterval="1" (input)="Update($event)"> </mat-slider> {{value}}
+    <mat-slider min="1" max="100" step="1" value="{{value}}" thumbLabel tickInterval="1" (input)="Update($event)"> </mat-slider> 
+    {{value}} <!--Display the value next to the slider.-->
     <br>
     Input Value:   
-    <!-- <input matInput placeholder="Enter a value between 0-100"> -->
-    <input id="view2Input" placeholder="Enter value (0-100)" min="0" max="100" type="number" style="background-color: #4CAF50;" >
     
+    <input id="view2Input" placeholder="Enter value (0-100)" min="0" max="100" type="number" style="background-color: #4CAF50;" >
+    <button type="button" (click)="UpdateVal()" > Submit </button> 
 
-     <button type="button" (click)="UpdateVal()" > Submit </button> 
-
-     <!--
-    <form (ngSubmit="OnSubmit($event)">
-        <input name="valueID" value="0">
-    </form>)
--->
+   
 </div>
+<br>
+
+<div class="warning">
+    Avoid Sliding slider, too many PUT requests might crash the json server. Instead click to change value</div>
+
+    <br>
+<img src="https://play.nintendo.com/images/Masthead_luigi.17345b1513ac044897cfc243542899dce541e8dc.9afde10b.png" 
+alt="luigi.png" style="width: 350px;height: 450px;">

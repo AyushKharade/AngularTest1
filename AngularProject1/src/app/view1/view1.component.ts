@@ -12,7 +12,7 @@ import { SliderValueService } from '../slider-value.service';
 })
 export class View1Component implements OnInit {
 
-  //sliderValue! : Observable<sliderV[]>; // ignore the warnings, this is an observerable variable
+  
   value : number=50; // actual slider value
 
   constructor(private _sliderValueService: SliderValueService) { }
@@ -23,20 +23,16 @@ export class View1Component implements OnInit {
      this._sliderValueService.GetAll().subscribe(
        data => {this.value = data[0].value} , 
        err => console.error(err)
-       
-       
      )
   
   }
 
-  // updating stuff
+  // call function everytime slider value is changed
   Update(event:MatSliderChange)
   {
     if(event.value!==null)
     {
     this.value = event.value;
-    //console.log(this.value);
-    //console.log(event.value+ "event");
     this._sliderValueService.UpdateSlider(this.value).subscribe(response =>{});
   }
 }

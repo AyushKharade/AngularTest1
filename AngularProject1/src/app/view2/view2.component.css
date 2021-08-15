@@ -1,0 +1,14 @@
+.ViewHeader2
+{
+    background-color:lightslategray;
+    width: 100px;
+}
+
+
+.warning
+{
+    border: 50 px solid red;
+    background-color:yellow;
+    width: 500px;
+    font-weight: bold;color: red;
+}

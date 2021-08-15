@@ -27,23 +27,30 @@ export class View2Component implements OnInit {
      )
   }
 
+  // this is called every time there is a change in the slider.
   Update(event:MatSliderChange)
   {
     if(event.value!==null)
     {
     this.value = event.value;
-    //console.log(this.value);
-    //console.log(event.value+ "event");
     this._sliderValueService.UpdateSlider(this.value).subscribe(response =>{});
   }
 }
 
 UpdateVal()
 {
-  
+ // get the associated value from the HTML document's Input field. 
   var valueStr=(<HTMLInputElement> document.getElementById("view2Input")).value;
   var valueNum = parseInt(valueStr);
 
+  // error checking
+  if(valueNum>100 || valueNum<0)
+  {
+    window.alert("Incorrect Value for slider (please enter an integer between (0 & 100)");
+    return;       
+    // invalid inputs will not be processed. Any floating point numbers will just be considered integers.
+  }
+  
   this._sliderValueService.UpdateSlider(valueNum).subscribe(response =>{});
 
   // for instant update of slider value.

@@ -1,14 +1,23 @@
 
+<br><br>
+<h2>You are currently on View1 Component.</h2>
 
-<p>view1 works!</p>
+<div>
+    <h2 class="ViewHeader1">View1</h2>
 
-<div class="myDiv">
-    <h2>View1</h2>
+    
+    
 
     Slider
-    <mat-slider min="1" max="100" step="1" value="{{value}}" thumbLabel tickInterval="1" (input)="Update($event)">
+    <mat-slider min="0" max="100" step="1" value="{{value}}" thumbLabel tickInterval="1" (input)="Update($event)">
 </mat-slider> 
-{{value}}
+{{value}}    <!--Display the value next to the slider.-->
 
 
 </div>
+
+<div class="warning">
+Avoid Sliding slider, too many PUT requests might crash the json server. Instead click to change value.</div>
+<br><br><br>
+<img src="https://mario.nintendo.com/static/fd723b2893d4d2b39ef71bfdb4e3329c/579b4/mario-background.png" alt="mario.png"
+    style="width: 350px;height: 420px;">
